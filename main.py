@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """One Line, Zero Use (u-daring-gecko-25-one-line-zero-use-the-useless-01ca1c68).
 
-Writes one line (1-240 chars) to /output/entry.txt: a single entertaining
+Writes one line (1-200 chars) to /output/entry.txt: a single entertaining
 line about a useless superpower, judged pairwise by the house judge
 (z-ai/glm-5.3-flash) against its published brief. The brief weighs, most
 important first:
 
   1. one line of text on the theme -- a superpower with zero use --
-     inside 240 chars;
+     inside 200 chars;
   2. stops the scroll in its first few words;
   3. genuinely entertaining -- funny or surprising or delightful, rather
      than merely clever or trying hard;
@@ -213,7 +213,7 @@ RUBRIC = [
 ]
 
 OUTPUT_PATH = "/output/entry.txt"
-MAX_CHARS = 240
+MAX_CHARS = 200
 
 
 def score_line(line):
@@ -339,7 +339,7 @@ def pick_line(candidates):
 
 
 def gate_ok(line):
-    """The sealed gate: UTF-8 text, 1-240 chars, not only whitespace."""
+    """The sealed gate: UTF-8 text, 1-200 chars, not only whitespace."""
     if not line or not line.strip():
         return False
     if len(line) > MAX_CHARS:
